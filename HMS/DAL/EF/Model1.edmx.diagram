@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="410dc232f9114c4898d00fe6df184b58" Name="Diagram1">
+        <EntityTypeShape EntityType="hmsModel.Admin" Width="1.5" PointX="3" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="hmsModel.Appointment" Width="1.5" PointX="5.25" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="hmsModel.BillingHistory" Width="1.5" PointX="5.25" PointY="12.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="hmsModel.Complaint" Width="1.5" PointX="5.25" PointY="15.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="hmsModel.Doctor" Width="1.5" PointX="3" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="hmsModel.InsuranceClaim" Width="1.5" PointX="5.25" PointY="18.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="hmsModel.MedicalHistory" Width="1.5" PointX="5.25" PointY="21" IsExpanded="true" />
+        <EntityTypeShape EntityType="hmsModel.Notification" Width="1.5" PointX="3" PointY="9.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="hmsModel.Patient" Width="1.5" PointX="3" PointY="16" IsExpanded="true" />
+        <EntityTypeShape EntityType="hmsModel.Prescription" Width="1.5" PointX="8.25" PointY="11.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="hmsModel.Receptionist" Width="1.5" PointX="3" PointY="23.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="hmsModel.User" Width="1.5" PointX="0.75" PointY="13.375" IsExpanded="true" />
+        <AssociationConnector Association="hmsModel.FK__Admin__UserID__1ED998B2" ManuallyRouted="false" />
+        <AssociationConnector Association="hmsModel.FK__Appointme__Docto__21B6055D" ManuallyRouted="false" />
+        <AssociationConnector Association="hmsModel.FK__Appointme__Patie__22AA2996" ManuallyRouted="false" />
+        <AssociationConnector Association="hmsModel.FK__BillingHi__Patie__31EC6D26" ManuallyRouted="false" />
+        <AssociationConnector Association="hmsModel.FK__Complaint__Patie__2C3393D0" ManuallyRouted="false" />
+        <AssociationConnector Association="hmsModel.FK__Doctor__UserID__1367E606" ManuallyRouted="false" />
+        <AssociationConnector Association="hmsModel.FK__Prescript__Docto__267ABA7A" ManuallyRouted="false" />
+        <AssociationConnector Association="hmsModel.FK__Insurance__Patie__34C8D9D1" ManuallyRouted="false" />
+        <AssociationConnector Association="hmsModel.FK__MedicalHi__Patie__2F10007B" ManuallyRouted="false" />
+        <AssociationConnector Association="hmsModel.FK__Notificat__UserI__29572725" ManuallyRouted="false" />
+        <AssociationConnector Association="hmsModel.FK__Patient__UserID__173876EA" ManuallyRouted="false" />
+        <AssociationConnector Association="hmsModel.FK__Prescript__Patie__25869641" ManuallyRouted="false" />
+        <AssociationConnector Association="hmsModel.FK__Reception__UserI__1B0907CE" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

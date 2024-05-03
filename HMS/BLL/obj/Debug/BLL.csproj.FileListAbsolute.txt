@@ -1,0 +1,12 @@
+D:\HMS\BLL\bin\Debug\BLL.dll
+D:\HMS\BLL\bin\Debug\BLL.pdb
+D:\HMS\BLL\bin\Debug\DAL.dll
+D:\HMS\BLL\bin\Debug\EntityFramework.dll
+D:\HMS\BLL\bin\Debug\DAL.pdb
+D:\HMS\BLL\bin\Debug\DAL.dll.config
+D:\HMS\BLL\bin\Debug\EntityFramework.xml
+D:\HMS\BLL\obj\Debug\BLL.csproj.AssemblyReference.cache
+D:\HMS\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
+D:\HMS\BLL\obj\Debug\BLL.csproj.CopyComplete
+D:\HMS\BLL\obj\Debug\BLL.dll
+D:\HMS\BLL\obj\Debug\BLL.pdb

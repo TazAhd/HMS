@@ -1,0 +1,10 @@
+D:\HMS\DAL\bin\Debug\DAL.dll.config
+D:\HMS\DAL\bin\Debug\DAL.dll
+D:\HMS\DAL\bin\Debug\DAL.pdb
+D:\HMS\DAL\bin\Debug\EntityFramework.dll
+D:\HMS\DAL\bin\Debug\EntityFramework.xml
+D:\HMS\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
+D:\HMS\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+D:\HMS\DAL\obj\Debug\DAL.csproj.CopyComplete
+D:\HMS\DAL\obj\Debug\DAL.dll
+D:\HMS\DAL\obj\Debug\DAL.pdb

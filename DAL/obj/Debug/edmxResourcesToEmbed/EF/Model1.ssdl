@@ -1,0 +1,342 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="hmsModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Admin">
+    <Key>
+      <PropertyRef Name="AdminID" />
+    </Key>
+    <Property Name="AdminID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserID" Type="int" />
+    <Property Name="Name" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="ContactInformation" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Appointment">
+    <Key>
+      <PropertyRef Name="AppointmentID" />
+    </Key>
+    <Property Name="AppointmentID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DoctorID" Type="int" />
+    <Property Name="PatientID" Type="int" />
+    <Property Name="AppointmentDateTime" Type="datetime" />
+    <Property Name="Status" Type="nvarchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="BillingHistory">
+    <Key>
+      <PropertyRef Name="BillingID" />
+    </Key>
+    <Property Name="BillingID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PatientID" Type="int" />
+    <Property Name="Amount" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="DateTime" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Complaint">
+    <Key>
+      <PropertyRef Name="ComplaintID" />
+    </Key>
+    <Property Name="ComplaintID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PatientID" Type="int" />
+    <Property Name="Complaint" Type="text" />
+    <Property Name="DateTime" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Doctor">
+    <Key>
+      <PropertyRef Name="DoctorID" />
+    </Key>
+    <Property Name="DoctorID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserID" Type="int" />
+    <Property Name="Name" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Specialization" Type="nvarchar" MaxLength="100" />
+    <Property Name="ContactInformation" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="InsuranceClaim">
+    <Key>
+      <PropertyRef Name="ClaimID" />
+    </Key>
+    <Property Name="ClaimID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PatientID" Type="int" />
+    <Property Name="ClaimDetails" Type="text" />
+    <Property Name="Status" Type="nvarchar" MaxLength="20" />
+    <Property Name="DateTime" Type="datetime" />
+  </EntityType>
+  <EntityType Name="MedicalHistory">
+    <Key>
+      <PropertyRef Name="HistoryID" />
+    </Key>
+    <Property Name="HistoryID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PatientID" Type="int" />
+    <Property Name="MedicalRecord" Type="text" />
+    <Property Name="DateTime" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Notification">
+    <Key>
+      <PropertyRef Name="NotificationID" />
+    </Key>
+    <Property Name="NotificationID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserID" Type="int" />
+    <Property Name="Message" Type="text" />
+    <Property Name="DateTime" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Patient">
+    <Key>
+      <PropertyRef Name="PatientID" />
+    </Key>
+    <Property Name="PatientID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserID" Type="int" />
+    <Property Name="Name" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Age" Type="int" />
+    <Property Name="Gender" Type="nvarchar" MaxLength="10" />
+    <Property Name="ContactInformation" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Prescription">
+    <Key>
+      <PropertyRef Name="PrescriptionID" />
+    </Key>
+    <Property Name="PrescriptionID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PatientID" Type="int" />
+    <Property Name="DoctorID" Type="int" />
+    <Property Name="Medications" Type="nvarchar" MaxLength="255" />
+    <Property Name="Dosage" Type="nvarchar" MaxLength="100" />
+    <Property Name="Instructions" Type="text" />
+    <Property Name="DatePrescribed" Type="date" />
+    <Property Name="PrescriptionFile" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="Receptionist">
+    <Key>
+      <PropertyRef Name="ReceptionistID" />
+    </Key>
+    <Property Name="ReceptionistID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserID" Type="int" />
+    <Property Name="Name" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="ContactInformation" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Username" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Password" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Role" Type="nvarchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__Admin__UserID__1ED998B2">
+    <End Role="User" Type="Self.User" Multiplicity="0..1" />
+    <End Role="Admin" Type="Self.Admin" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="Admin">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Appointme__Docto__21B6055D">
+    <End Role="Doctor" Type="Self.Doctor" Multiplicity="0..1" />
+    <End Role="Appointment" Type="Self.Appointment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Doctor">
+        <PropertyRef Name="DoctorID" />
+      </Principal>
+      <Dependent Role="Appointment">
+        <PropertyRef Name="DoctorID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Appointme__Patie__22AA2996">
+    <End Role="Patient" Type="Self.Patient" Multiplicity="0..1" />
+    <End Role="Appointment" Type="Self.Appointment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Patient">
+        <PropertyRef Name="PatientID" />
+      </Principal>
+      <Dependent Role="Appointment">
+        <PropertyRef Name="PatientID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__BillingHi__Patie__31EC6D26">
+    <End Role="Patient" Type="Self.Patient" Multiplicity="0..1" />
+    <End Role="BillingHistory" Type="Self.BillingHistory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Patient">
+        <PropertyRef Name="PatientID" />
+      </Principal>
+      <Dependent Role="BillingHistory">
+        <PropertyRef Name="PatientID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Complaint__Patie__2C3393D0">
+    <End Role="Patient" Type="Self.Patient" Multiplicity="0..1" />
+    <End Role="Complaint" Type="Self.Complaint" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Patient">
+        <PropertyRef Name="PatientID" />
+      </Principal>
+      <Dependent Role="Complaint">
+        <PropertyRef Name="PatientID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Doctor__UserID__1367E606">
+    <End Role="User" Type="Self.User" Multiplicity="0..1" />
+    <End Role="Doctor" Type="Self.Doctor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="Doctor">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Insurance__Patie__34C8D9D1">
+    <End Role="Patient" Type="Self.Patient" Multiplicity="0..1" />
+    <End Role="InsuranceClaim" Type="Self.InsuranceClaim" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Patient">
+        <PropertyRef Name="PatientID" />
+      </Principal>
+      <Dependent Role="InsuranceClaim">
+        <PropertyRef Name="PatientID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__MedicalHi__Patie__2F10007B">
+    <End Role="Patient" Type="Self.Patient" Multiplicity="0..1" />
+    <End Role="MedicalHistory" Type="Self.MedicalHistory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Patient">
+        <PropertyRef Name="PatientID" />
+      </Principal>
+      <Dependent Role="MedicalHistory">
+        <PropertyRef Name="PatientID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Notificat__UserI__29572725">
+    <End Role="User" Type="Self.User" Multiplicity="0..1" />
+    <End Role="Notification" Type="Self.Notification" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="Notification">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Patient__UserID__173876EA">
+    <End Role="User" Type="Self.User" Multiplicity="0..1" />
+    <End Role="Patient" Type="Self.Patient" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="Patient">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Prescript__Docto__267ABA7A">
+    <End Role="Doctor" Type="Self.Doctor" Multiplicity="0..1" />
+    <End Role="Prescription" Type="Self.Prescription" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Doctor">
+        <PropertyRef Name="DoctorID" />
+      </Principal>
+      <Dependent Role="Prescription">
+        <PropertyRef Name="DoctorID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Prescript__Patie__25869641">
+    <End Role="Patient" Type="Self.Patient" Multiplicity="0..1" />
+    <End Role="Prescription" Type="Self.Prescription" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Patient">
+        <PropertyRef Name="PatientID" />
+      </Principal>
+      <Dependent Role="Prescription">
+        <PropertyRef Name="PatientID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Reception__UserI__1B0907CE">
+    <End Role="User" Type="Self.User" Multiplicity="0..1" />
+    <End Role="Receptionist" Type="Self.Receptionist" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="Receptionist">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="hmsModelStoreContainer">
+    <EntitySet Name="Admin" EntityType="Self.Admin" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Appointment" EntityType="Self.Appointment" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BillingHistory" EntityType="Self.BillingHistory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Complaint" EntityType="Self.Complaint" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Doctor" EntityType="Self.Doctor" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="InsuranceClaim" EntityType="Self.InsuranceClaim" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MedicalHistory" EntityType="Self.MedicalHistory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Notification" EntityType="Self.Notification" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Patient" EntityType="Self.Patient" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Prescription" EntityType="Self.Prescription" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Receptionist" EntityType="Self.Receptionist" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__Admin__UserID__1ED998B2" Association="Self.FK__Admin__UserID__1ED998B2">
+      <End Role="User" EntitySet="User" />
+      <End Role="Admin" EntitySet="Admin" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Appointme__Docto__21B6055D" Association="Self.FK__Appointme__Docto__21B6055D">
+      <End Role="Doctor" EntitySet="Doctor" />
+      <End Role="Appointment" EntitySet="Appointment" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Appointme__Patie__22AA2996" Association="Self.FK__Appointme__Patie__22AA2996">
+      <End Role="Patient" EntitySet="Patient" />
+      <End Role="Appointment" EntitySet="Appointment" />
+    </AssociationSet>
+    <AssociationSet Name="FK__BillingHi__Patie__31EC6D26" Association="Self.FK__BillingHi__Patie__31EC6D26">
+      <End Role="Patient" EntitySet="Patient" />
+      <End Role="BillingHistory" EntitySet="BillingHistory" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Complaint__Patie__2C3393D0" Association="Self.FK__Complaint__Patie__2C3393D0">
+      <End Role="Patient" EntitySet="Patient" />
+      <End Role="Complaint" EntitySet="Complaint" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Doctor__UserID__1367E606" Association="Self.FK__Doctor__UserID__1367E606">
+      <End Role="User" EntitySet="User" />
+      <End Role="Doctor" EntitySet="Doctor" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Insurance__Patie__34C8D9D1" Association="Self.FK__Insurance__Patie__34C8D9D1">
+      <End Role="Patient" EntitySet="Patient" />
+      <End Role="InsuranceClaim" EntitySet="InsuranceClaim" />
+    </AssociationSet>
+    <AssociationSet Name="FK__MedicalHi__Patie__2F10007B" Association="Self.FK__MedicalHi__Patie__2F10007B">
+      <End Role="Patient" EntitySet="Patient" />
+      <End Role="MedicalHistory" EntitySet="MedicalHistory" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Notificat__UserI__29572725" Association="Self.FK__Notificat__UserI__29572725">
+      <End Role="User" EntitySet="User" />
+      <End Role="Notification" EntitySet="Notification" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Patient__UserID__173876EA" Association="Self.FK__Patient__UserID__173876EA">
+      <End Role="User" EntitySet="User" />
+      <End Role="Patient" EntitySet="Patient" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Prescript__Docto__267ABA7A" Association="Self.FK__Prescript__Docto__267ABA7A">
+      <End Role="Doctor" EntitySet="Doctor" />
+      <End Role="Prescription" EntitySet="Prescription" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Prescript__Patie__25869641" Association="Self.FK__Prescript__Patie__25869641">
+      <End Role="Patient" EntitySet="Patient" />
+      <End Role="Prescription" EntitySet="Prescription" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Reception__UserI__1B0907CE" Association="Self.FK__Reception__UserI__1B0907CE">
+      <End Role="User" EntitySet="User" />
+      <End Role="Receptionist" EntitySet="Receptionist" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
