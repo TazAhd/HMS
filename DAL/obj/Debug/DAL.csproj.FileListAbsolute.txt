@@ -8,3 +8,13 @@ D:\HMS\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
 D:\HMS\DAL\obj\Debug\DAL.csproj.CopyComplete
 D:\HMS\DAL\obj\Debug\DAL.dll
 D:\HMS\DAL\obj\Debug\DAL.pdb
+D:\HMS\HMS-github\HMS\DAL\bin\Debug\DAL.dll.config
+D:\HMS\HMS-github\HMS\DAL\bin\Debug\DAL.dll
+D:\HMS\HMS-github\HMS\DAL\bin\Debug\DAL.pdb
+D:\HMS\HMS-github\HMS\DAL\bin\Debug\EntityFramework.dll
+D:\HMS\HMS-github\HMS\DAL\bin\Debug\EntityFramework.xml
+D:\HMS\HMS-github\HMS\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
+D:\HMS\HMS-github\HMS\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+D:\HMS\HMS-github\HMS\DAL\obj\Debug\DAL.csproj.CopyComplete
+D:\HMS\HMS-github\HMS\DAL\obj\Debug\DAL.dll
+D:\HMS\HMS-github\HMS\DAL\obj\Debug\DAL.pdb

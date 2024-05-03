@@ -10,3 +10,15 @@ D:\HMS\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
 D:\HMS\BLL\obj\Debug\BLL.csproj.CopyComplete
 D:\HMS\BLL\obj\Debug\BLL.dll
 D:\HMS\BLL\obj\Debug\BLL.pdb
+D:\HMS\HMS-github\HMS\BLL\bin\Debug\BLL.dll
+D:\HMS\HMS-github\HMS\BLL\bin\Debug\BLL.pdb
+D:\HMS\HMS-github\HMS\BLL\bin\Debug\DAL.dll
+D:\HMS\HMS-github\HMS\BLL\bin\Debug\EntityFramework.dll
+D:\HMS\HMS-github\HMS\BLL\bin\Debug\DAL.pdb
+D:\HMS\HMS-github\HMS\BLL\bin\Debug\DAL.dll.config
+D:\HMS\HMS-github\HMS\BLL\bin\Debug\EntityFramework.xml
+D:\HMS\HMS-github\HMS\BLL\obj\Debug\BLL.csproj.AssemblyReference.cache
+D:\HMS\HMS-github\HMS\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
+D:\HMS\HMS-github\HMS\BLL\obj\Debug\BLL.csproj.CopyComplete
+D:\HMS\HMS-github\HMS\BLL\obj\Debug\BLL.dll
+D:\HMS\HMS-github\HMS\BLL\obj\Debug\BLL.pdb
