@@ -363,3 +363,5 @@ MigrationBackup/
 FodyWeavers.xsd
 HMS/Web.config
 DAL/App.Config
+DAL/App.Config
+*.Config
