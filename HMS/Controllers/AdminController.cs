@@ -1,4 +1,5 @@
-﻿using BLL.Services;
+﻿using BLL.DTOs;
+using BLL.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,6 +24,13 @@ namespace HMS.Controllers
         public HttpResponseMessage GetById(int id)
         {
             var data = DoctorService.doctorById(id);
+            return Request.CreateResponse(HttpStatusCode.OK, data);
+        }
+        [HttpPost]
+        [Route("api/doctor/save")]
+        public HttpResponseMessage createDoctor(UserDTO model)
+        {
+            var data = DoctorService.createDoctor(model);
             return Request.CreateResponse(HttpStatusCode.OK, data);
         }
     }

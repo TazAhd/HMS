@@ -10,29 +10,55 @@ namespace DAL.Repos
 {
     public class PrescriptionRepo : Repo, IRepo<Prescription, int>
     {
-        public void Create(Prescription obj)
+        public Prescription Create(Prescription obj)
         {
-            throw new NotImplementedException();
+            var objSave = new Prescription();
+            if (obj == null)
+            {
+                return objSave;
+            }
+
+            objSave = obj;
+            db.Prescriptions.Add(obj);
+            db.SaveChanges();
+            return objSave;
         }
 
-        public void Delete(int id)
+        public bool Delete(int id)
         {
-            throw new NotImplementedException();
+            var deleteObject = db.Prescriptions.FirstOrDefault(e => e.PrescriptionID == id);
+            if (deleteObject == null)
+            {
+                return false;
+            }
+            db.Prescriptions.Remove(deleteObject);
+            db.SaveChanges();
+            return true;
         }
 
         public List<Prescription> Get()
         {
-            throw new NotImplementedException();
+            var data = db.Prescriptions.ToList();
+            return data;
         }
 
         public Prescription Get(int id)
         {
-            throw new NotImplementedException();
+            var data = db.Prescriptions.FirstOrDefault(e => e.PrescriptionID == id);
+            return data;
         }
 
-        public void Update(Prescription obj)
+        public Prescription Update(Prescription obj)
         {
-            throw new NotImplementedException();
+            var updateObject = db.Prescriptions.FirstOrDefault(e => e.PrescriptionID == obj.PrescriptionID);
+            if (updateObject == null)
+            {
+                return updateObject = new Prescription();
+            }
+
+            updateObject = obj;
+            db.SaveChanges();
+            return updateObject;
         }
     }
 }

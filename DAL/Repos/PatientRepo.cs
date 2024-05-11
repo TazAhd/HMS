@@ -10,27 +10,29 @@ namespace DAL.Repos
 {
     public class PatientRepo : Repo, IRepo<Patient, int>
     {
-        public void Create(Patient obj)
+        public Patient Create(Patient obj)
         {
             throw new NotImplementedException();
         }
 
-        public void Delete(int id)
+        public bool Delete(int id)
         {
             throw new NotImplementedException();
         }
 
         public List<Patient> Get()
         {
-            throw new NotImplementedException();
+            var data = db.Patients.ToList();
+            return data;
         }
 
         public Patient Get(int id)
         {
-            throw new NotImplementedException();
+            var data = db.Patients.FirstOrDefault(e => e.PatientID == id);
+            return data;
         }
 
-        public void Update(Patient obj)
+        public Patient Update(Patient obj)
         {
             throw new NotImplementedException();
         }

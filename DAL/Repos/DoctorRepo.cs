@@ -10,14 +10,31 @@ namespace DAL.Repos
 {
     public class DoctorRepo : Repo, IRepo<Doctor, int>
     {
-        public void Create(Doctor obj)
+        public Doctor Create(Doctor obj)
         {
-            throw new NotImplementedException();
+            var objSave = new Doctor();
+            if(obj == null)
+            {
+                return objSave;
+            }
+
+            objSave = obj;
+            db.Doctors.Add(obj);
+            db.SaveChanges();
+            return objSave;
         }
 
-        public void Delete(int id)
+        public bool Delete(int id)
         {
-            throw new NotImplementedException();
+            var delteObject = db.Doctors.FirstOrDefault(e => e.DoctorID == id);
+            if(delteObject == null)
+            {
+                return false;
+            }
+
+            db.Doctors.Remove(delteObject);
+            db.SaveChanges();
+            return true;
         }
 
         public List<Doctor> Get()
@@ -32,9 +49,18 @@ namespace DAL.Repos
             return data;
         }
 
-        public void Update(Doctor obj)
+        public Doctor Update(Doctor obj)
         {
-            throw new NotImplementedException();
+            var upDateObject = db.Doctors.FirstOrDefault(e => e.DoctorID == obj.DoctorID);
+            if (upDateObject == null)
+            {
+                return upDateObject = new Doctor();
+            }
+
+            upDateObject = obj;
+            db.SaveChanges();
+            return upDateObject;
+
         }
     }
 }

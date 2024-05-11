@@ -10,12 +10,12 @@ namespace DAL.Repos
 {
     public class ReceptionistRepo : Repo, IRepo<Receptionist, int>
     {
-        public void Create(Receptionist obj)
+        public Receptionist Create(Receptionist obj)
         {
             throw new NotImplementedException();
         }
 
-        public void Delete(int id)
+        public bool Delete(int id)
         {
             throw new NotImplementedException();
         }
@@ -30,7 +30,7 @@ namespace DAL.Repos
             throw new NotImplementedException();
         }
 
-        public void Update(Receptionist obj)
+        public Receptionist Update(Receptionist obj)
         {
             throw new NotImplementedException();
         }

@@ -10,12 +10,21 @@ namespace DAL.Repos
 {
     class UserRepo : Repo, IRepo<User, int>
     {
-        public void Create(User obj)
+        public User Create(User obj)
         {
-            throw new NotImplementedException();
+            var objSave = new User();
+            if (obj == null)
+            {
+                return objSave;
+            }
+
+            objSave = obj;
+            db.Users.Add(obj);
+            db.SaveChanges();
+            return objSave;
         }
 
-        public void Delete(int id)
+        public bool Delete(int id)
         {
             throw new NotImplementedException();
         }
@@ -30,7 +39,7 @@ namespace DAL.Repos
             throw new NotImplementedException();
         }
 
-        public void Update(User obj)
+        public User Update(User obj)
         {
             throw new NotImplementedException();
         }

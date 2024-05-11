@@ -8,10 +8,10 @@ namespace DAL.Interface
 {
     public interface IRepo<CLASS,ID>
     {
-        void Create(CLASS obj);
+        CLASS Create(CLASS obj);
         List<CLASS> Get();
         CLASS Get(ID id);
-        void Update(CLASS obj);
-        void Delete(ID id);
+        CLASS Update(CLASS obj);
+        bool Delete(ID id);
     }
 }

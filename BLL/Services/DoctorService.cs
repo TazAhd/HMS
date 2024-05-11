@@ -1,5 +1,6 @@
 ﻿using BLL.DTOs;
 using DAL;
+using DAL.EF;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -42,6 +43,40 @@ namespace BLL.Services
             returnModel.ContactInformation = data.ContactInformation;
 
             return returnModel;
+
+        }
+
+        public static UserDTO createDoctor(UserDTO data)
+        {
+            if (data == null)
+            {
+                return data;
+            }
+
+
+
+            var objToSave = new User();
+
+            objToSave.Username = data.Username;
+            objToSave.Password = data.Password;
+            objToSave.Role = data.Role;
+
+            var saveUser = DataFactory.UserData().Create(objToSave);
+            if(saveUser == null)
+            {
+                return data;
+            }
+            var doctorData = data.Doctors.First();
+            var objDoctor = new Doctor();
+            objDoctor.UserID = saveUser.UserID;
+            objDoctor.Name = doctorData.Name;
+            objDoctor.Specialization = doctorData.Specialization;
+            objDoctor.ContactInformation = doctorData.ContactInformation;
+            var saveDoctor = DataFactory.DoctorData().Create(objDoctor);
+
+            return data;
+
+
 
         }
 

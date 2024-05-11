@@ -10,12 +10,12 @@ namespace DAL.Repos
 {
     public class ComplaintRepo : Repo, IRepo<Complaint, int>
     {
-        public void Create(Complaint obj)
+        public Complaint Create(Complaint obj)
         {
             throw new NotImplementedException();
         }
 
-        public void Delete(int id)
+        public bool Delete(int id)
         {
             throw new NotImplementedException();
         }
@@ -30,7 +30,7 @@ namespace DAL.Repos
             throw new NotImplementedException();
         }
 
-        public void Update(Complaint obj)
+        public Complaint Update(Complaint obj)
         {
             throw new NotImplementedException();
         }

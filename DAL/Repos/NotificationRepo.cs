@@ -10,47 +10,27 @@ namespace DAL.Repos
 {
     public class NotificationRepo : Repo, IRepo<Notification, int>
     {
-        public void Create(NotificationRepo obj)
+        public Notification Create(Notification obj)
         {
             throw new NotImplementedException();
         }
 
-        public void Create(Notification obj)
+        public bool Delete(int id)
         {
             throw new NotImplementedException();
         }
 
-        public void Delete(int id)
+        public List<Notification> Get()
         {
             throw new NotImplementedException();
         }
 
-        public List<NotificationRepo> Get()
+        public Notification Get(int id)
         {
             throw new NotImplementedException();
         }
 
-        public NotificationRepo Get(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Update(NotificationRepo obj)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Update(Notification obj)
-        {
-            throw new NotImplementedException();
-        }
-
-        List<Notification> IRepo<Notification, int>.Get()
-        {
-            throw new NotImplementedException();
-        }
-
-        Notification IRepo<Notification, int>.Get(int id)
+        public Notification Update(Notification obj)
         {
             throw new NotImplementedException();
         }

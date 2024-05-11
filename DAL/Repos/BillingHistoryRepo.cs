@@ -10,12 +10,12 @@ namespace DAL.Repos
 {
     public class BillingHistoryRepo : Repo, IRepo<BillingHistory, int>
     {
-        public void Create(BillingHistory obj)
+        public BillingHistory Create(BillingHistory obj)
         {
             throw new NotImplementedException();
         }
 
-        public void Delete(int id)
+        public bool Delete(int id)
         {
             throw new NotImplementedException();
         }
@@ -30,7 +30,7 @@ namespace DAL.Repos
             throw new NotImplementedException();
         }
 
-        public void Update(BillingHistory obj)
+        public BillingHistory Update(BillingHistory obj)
         {
             throw new NotImplementedException();
         }

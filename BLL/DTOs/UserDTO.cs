@@ -8,9 +8,8 @@ namespace BLL.DTOs
 {
     public class UserDTO
     {
-        public partial class User
-        {
-            public User()
+
+            public UserDTO()
             {
                 this.Admins = new HashSet<AdminDTO>();
                 this.Doctors = new HashSet<DoctorDTO>();
@@ -29,6 +28,6 @@ namespace BLL.DTOs
             public virtual ICollection<NotificationDTO> Notifications { get; set; }
             public virtual ICollection<PatientDTO> Patients { get; set; }
             public virtual ICollection<ReceptionistDTO> Receptionists { get; set; }
-        }
+        
     }
 }

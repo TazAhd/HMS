@@ -10,12 +10,12 @@ namespace DAL.Repos
 {
     public class AdminRepo : Repo, IRepo<Admin, int>
     {
-        public void Create(Admin obj)
+        public Admin Create(Admin obj)
         {
             throw new NotImplementedException();
         }
 
-        public void Delete(int id)
+        public bool Delete(int id)
         {
             throw new NotImplementedException();
         }
@@ -30,7 +30,7 @@ namespace DAL.Repos
             throw new NotImplementedException();
         }
 
-        public void Update(Admin obj)
+        public Admin Update(Admin obj)
         {
             throw new NotImplementedException();
         }
