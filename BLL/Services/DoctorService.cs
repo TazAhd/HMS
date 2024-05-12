@@ -37,6 +37,7 @@ namespace BLL.Services
             {
                 return returnModel;
             }
+            returnModel.UserID = data.UserID;
             returnModel.DoctorID = data.DoctorID;
             returnModel.Name = data.Name;
             returnModel.Specialization = data.Specialization;
@@ -79,6 +80,41 @@ namespace BLL.Services
 
 
         }
+
+        public static DoctorDTO updateDoctor(DoctorDTO data)
+        {
+            if (data == null)
+            {
+                return data;
+            }
+            var objDoctor = new Doctor();
+            objDoctor.DoctorID = data.DoctorID;
+            objDoctor.UserID = data.UserID;
+            objDoctor.Name = data.Name;
+            objDoctor.Specialization = data.Specialization;
+            objDoctor.ContactInformation = data.ContactInformation;
+            var updateDoctor = DataFactory.DoctorData().Update(objDoctor);
+            return data;
+
+        }
+
+        public static bool DeleteDoctor(int id)
+        {
+
+            if (id == 0)
+            {
+                return false;
+            }
+            var deleteDoctor = DataFactory.DoctorData().Delete(id);
+            if(deleteDoctor)
+            {
+                return true;
+
+            }
+            return false;
+        }
+
+
 
 
     }

@@ -33,5 +33,21 @@ namespace HMS.Controllers
             var data = DoctorService.createDoctor(model);
             return Request.CreateResponse(HttpStatusCode.OK, data);
         }
+
+        [HttpPost]
+        [Route("api/doctor/update")]
+        public HttpResponseMessage UpdateDoctor(DoctorDTO model)
+        {
+            var data = DoctorService.updateDoctor(model);
+            return Request.CreateResponse(HttpStatusCode.OK, data);
+        }
+
+        [HttpGet]
+        [Route("api/doctor/delete/{id}")]
+        public HttpResponseMessage DeleteDoctor(int id)
+        {
+            var data = DoctorService.DeleteDoctor(id);
+            return Request.CreateResponse(HttpStatusCode.OK, data);
+        }
     }
 }

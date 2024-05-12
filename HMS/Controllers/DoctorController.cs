@@ -71,4 +71,6 @@ namespace HMS.Controllers
             return Request.CreateResponse(HttpStatusCode.OK, data);
         }
     }
+
+    
 }

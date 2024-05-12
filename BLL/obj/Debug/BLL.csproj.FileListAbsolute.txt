@@ -22,3 +22,5 @@ D:\HMS\HMS-github\HMS\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
 D:\HMS\HMS-github\HMS\BLL\obj\Debug\BLL.csproj.CopyComplete
 D:\HMS\HMS-github\HMS\BLL\obj\Debug\BLL.dll
 D:\HMS\HMS-github\HMS\BLL\obj\Debug\BLL.pdb
+D:\HMS\HMS-github\HMS\BLL\bin\Debug\Newtonsoft.Json.dll
+D:\HMS\HMS-github\HMS\BLL\bin\Debug\Newtonsoft.Json.xml

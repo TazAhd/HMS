@@ -22,12 +22,14 @@ namespace DAL.Repos
 
         public List<MedicalHistory> Get()
         {
-            throw new NotImplementedException();
+            var data = db.MedicalHistories.ToList();
+            return data;
         }
 
         public MedicalHistory Get(int id)
         {
-            throw new NotImplementedException();
+            var data = db.MedicalHistories.FirstOrDefault(e => e.HistoryID == id);
+            return data;
         }
 
         public MedicalHistory Update(MedicalHistory obj)

@@ -54,12 +54,14 @@ namespace DAL.Repos
             var upDateObject = db.Doctors.FirstOrDefault(e => e.DoctorID == obj.DoctorID);
             if (upDateObject == null)
             {
-                return upDateObject = new Doctor();
+                return null;
             }
 
-            upDateObject = obj;
+            upDateObject.Name = obj.Name;
+            upDateObject.Specialization = obj.Specialization;
+            upDateObject.ContactInformation = obj.ContactInformation;
             db.SaveChanges();
-            return upDateObject;
+            return obj;
 
         }
     }
