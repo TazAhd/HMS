@@ -26,6 +26,8 @@ namespace HMS.Controllers
             var data = DoctorService.doctorById(id);
             return Request.CreateResponse(HttpStatusCode.OK, data);
         }
+
+
         [HttpPost]
         [Route("api/doctor/save")]
         public HttpResponseMessage createDoctor(UserDTO model)
@@ -38,7 +40,7 @@ namespace HMS.Controllers
         [Route("api/doctor/update")]
         public HttpResponseMessage UpdateDoctor(DoctorDTO model)
         {
-            var data = DoctorService.updateDoctor(model);
+            var data = DoctorService.UpdateDoctor(model);
             return Request.CreateResponse(HttpStatusCode.OK, data);
         }
 
@@ -49,5 +51,14 @@ namespace HMS.Controllers
             var data = DoctorService.DeleteDoctor(id);
             return Request.CreateResponse(HttpStatusCode.OK, data);
         }
+
+        //[HttpGet]
+        //[Route("api/doctor/bydoctorid/{id}")]
+
+        //public HttpResponseMessage GetByDoctorId(int id)
+        //{
+        //    var data = PrescriptionService.GetAllDoctorinfoByDoctorId(id);
+        //    return Request.CreateResponse(HttpStatusCode.OK, data);
+        //}
     }
 }

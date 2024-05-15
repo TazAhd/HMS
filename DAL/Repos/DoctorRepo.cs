@@ -24,6 +24,8 @@ namespace DAL.Repos
             return objSave;
         }
 
+        
+
         public bool Delete(int id)
         {
             var delteObject = db.Doctors.FirstOrDefault(e => e.DoctorID == id);

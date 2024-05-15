@@ -12,8 +12,19 @@ namespace DAL.Repos
     {
         public Patient Create(Patient obj)
         {
+            var objSave = new Patient();
+            if (obj == null)
+            {
+                return objSave;
+            }
+            objSave = obj;
+            db.Patients.Add(obj);
+            db.SaveChanges();
+            return objSave;
             throw new NotImplementedException();
         }
+
+        
 
         public bool Delete(int id)
         {

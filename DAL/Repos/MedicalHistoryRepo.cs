@@ -12,12 +12,29 @@ namespace DAL.Repos
     {
         public MedicalHistory Create(MedicalHistory obj)
         {
-            throw new NotImplementedException();
+            var objSave = new MedicalHistory();
+            if (obj == null)
+            {
+                return objSave;
+            }
+
+            objSave = obj;
+            db.MedicalHistories.Add(obj);
+            db.SaveChanges();
+            return objSave;
         }
+
 
         public bool Delete(int id)
         {
-            throw new NotImplementedException();
+            var deleteObject = db.MedicalHistories.FirstOrDefault(e => e.HistoryID == id);
+            if (deleteObject == null)
+            {
+                return false;
+            }
+            db.MedicalHistories.Remove(deleteObject);
+            db.SaveChanges();
+            return true;
         }
 
         public List<MedicalHistory> Get()
@@ -34,7 +51,17 @@ namespace DAL.Repos
 
         public MedicalHistory Update(MedicalHistory obj)
         {
-            throw new NotImplementedException();
+            var upDateObject = db.MedicalHistories.FirstOrDefault(e => e.HistoryID == obj.HistoryID);
+            if (upDateObject == null)
+            {
+                return null;
+            }
+
+            upDateObject.MedicalRecord = obj.MedicalRecord;
+            upDateObject.DateTime = obj.DateTime;
+            
+            db.SaveChanges();
+            return obj;
         }
     }
 }

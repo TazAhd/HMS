@@ -22,6 +22,7 @@ namespace DAL.Repos
             db.Prescriptions.Add(obj);
             db.SaveChanges();
             return objSave;
+            
         }
 
         public bool Delete(int id)
@@ -50,15 +51,20 @@ namespace DAL.Repos
 
         public Prescription Update(Prescription obj)
         {
-            var updateObject = db.Prescriptions.FirstOrDefault(e => e.PrescriptionID == obj.PrescriptionID);
-            if (updateObject == null)
+            var upDateObject = db.Prescriptions.FirstOrDefault(e => e.PrescriptionID == obj.PrescriptionID);
+            if (upDateObject == null)
             {
-                return updateObject = new Prescription();
+                return null;
             }
 
-            updateObject = obj;
+            upDateObject.Medications = obj.Medications;
+            upDateObject.Dosage = obj.Dosage;
+            upDateObject.Instructions = obj.Instructions;
+            upDateObject.DatePrescribed = obj.DatePrescribed;
+            upDateObject.PrescriptionFile = obj.PrescriptionFile;
             db.SaveChanges();
-            return updateObject;
+            return obj;
         }
+
     }
 }

@@ -1,4 +1,5 @@
-﻿using BLL.Services;
+﻿using BLL.DTOs;
+using BLL.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -29,48 +30,16 @@ namespace HMS.Controllers
             return Request.CreateResponse(HttpStatusCode.OK, data);
         }
 
+        //[HttpPost]
+        //[Route("api/medicalhistory/update")]
+        //public HttpResponseMessage UpdateDoctor(DoctorDTO model)
+        //{
+        //    var data = MedicalHistoryService.UpdateDoctor(model);
+        //    return Request.CreateResponse(HttpStatusCode.OK, data);
+        //}
 
     }
-    public class AppointmentController : ApiController
-    {
-        [HttpGet]
-        [Route("api/appointment/all")]
-        public HttpResponseMessage Get()
-        {
-            var data = AppointmentService.GetAllappointments();
-            return Request.CreateResponse(HttpStatusCode.OK, data);
-        }
 
-        [HttpGet]
-        [Route("api/appointment/{id}")]
 
-        public HttpResponseMessage GetById(int id)
-        {
-            var data = AppointmentService.appointmentById(id);
-            return Request.CreateResponse(HttpStatusCode.OK, data);
-        }
-    }
 
-    public class PrescriptionController : ApiController
-    {
-        [HttpGet]
-        [Route("api/prescription/all")]
-
-        public HttpResponseMessage Get()
-        {
-            var data = PrescriptionService.GetAllPrescriptioninf();
-            return Request.CreateResponse(HttpStatusCode.OK, data);
-        }
-
-        [HttpGet]
-        [Route("api/prescription/{id}")]
-
-        public HttpResponseMessage GetById(int id)
-        {
-            var data = PrescriptionService.PrescriptionById(id);
-            return Request.CreateResponse(HttpStatusCode.OK, data);
-        }
-    }
-
-    
 }

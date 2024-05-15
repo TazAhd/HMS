@@ -16,7 +16,7 @@ namespace BLL.DTOs
         public string Instructions { get; set; }
         public Nullable<System.DateTime> DatePrescribed { get; set; }
         public string PrescriptionFile { get; set; }
-
+        //[JsonIgnore]
         public virtual DoctorDTO Doctor { get; set; }
         public virtual PatientDTO Patient { get; set; }
     }

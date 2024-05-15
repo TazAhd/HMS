@@ -24,6 +24,7 @@ namespace DAL.Repos
             return objSave;
         }
 
+
         public bool Delete(int id)
         {
             var deleteObject = db.Appointments.FirstOrDefault(e => e.AppointmentID == id);

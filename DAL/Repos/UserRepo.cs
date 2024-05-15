@@ -24,6 +24,8 @@ namespace DAL.Repos
             return objSave;
         }
 
+        
+
         public bool Delete(int id)
         {
             throw new NotImplementedException();
@@ -31,12 +33,14 @@ namespace DAL.Repos
 
         public List<User> Get()
         {
-            throw new NotImplementedException();
+            var data = db.Users.ToList();
+            return data;
         }
 
         public User Get(int id)
         {
-            throw new NotImplementedException();
+            var data = db.Users.FirstOrDefault(e => e.UserID == id);
+            return data;
         }
 
         public User Update(User obj)

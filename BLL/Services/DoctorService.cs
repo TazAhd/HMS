@@ -11,11 +11,32 @@ namespace BLL.Services
 {
     public class DoctorService
     {
+
+        //public static List<DoctorDTO> GetAllDoctorinfoByDoctorId(int id)
+        //{
+        //    var allDoctor = DataFactory.DoctorData().Get().ToList();
+        //    var data = allDoctor.Where(e => e.UserID == id);
+        //    var returnList = new List<DoctorDTO>();
+        //    foreach (var doc in data)
+        //    {
+        //        var returnModel = new DoctorDTO()
+        //        {
+        //            DoctorID = doc.DoctorID,
+        //            Name = doc.Name,
+        //            Specialization = doc.Specialization,
+        //            ContactInformation = doc.ContactInformation
+        //        };
+        //        returnList.Add(returnModel);
+        //    }
+        //    return returnList;
+        //}
+
+
         public static List<DoctorDTO> GetAlldoctors()
         {
             var data = DataFactory.DoctorData().Get();
             var returnList = new List<DoctorDTO>();
-            foreach(var doc in data)
+            foreach (var doc in data)
             {
                 var returnModel = new DoctorDTO()
                 {
@@ -47,6 +68,8 @@ namespace BLL.Services
 
         }
 
+
+
         public static UserDTO createDoctor(UserDTO data)
         {
             if (data == null)
@@ -63,7 +86,7 @@ namespace BLL.Services
             objToSave.Role = data.Role;
 
             var saveUser = DataFactory.UserData().Create(objToSave);
-            if(saveUser == null)
+            if (saveUser == null)
             {
                 return data;
             }
@@ -77,11 +100,9 @@ namespace BLL.Services
 
             return data;
 
-
-
         }
 
-        public static DoctorDTO updateDoctor(DoctorDTO data)
+        public static DoctorDTO UpdateDoctor(DoctorDTO data)
         {
             if (data == null)
             {
@@ -106,15 +127,13 @@ namespace BLL.Services
                 return false;
             }
             var deleteDoctor = DataFactory.DoctorData().Delete(id);
-            if(deleteDoctor)
+            if (deleteDoctor)
             {
                 return true;
 
             }
             return false;
         }
-
-
 
 
     }

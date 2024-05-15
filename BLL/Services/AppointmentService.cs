@@ -48,5 +48,22 @@ namespace BLL.Services
 
         }
 
+
+        public static bool DeleteAppoinment(int id)
+        {
+
+            if (id == 0)
+            {
+                return false;
+            }
+            var deleteAppointment = DataFactory.AppoinmentData().Delete(id);
+            if (deleteAppointment)
+            {
+                return true;
+
+            }
+            return false;
+        }
+
     }
 }
